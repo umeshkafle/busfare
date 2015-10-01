@@ -14,22 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
 
 $(document).ready(function()
 {
-	$(".btn").click (function()
-	{
-		alert("Ticket Booked")
-	});
-
-});
-
-$(document).ready(function()
-{
-	$("td").click(function(e)
-	{
-		e.preventDefault();
-		$("td.active").removeClass("active");
-		$(this).addClass("active");
-	});
+	$(".btn").bind('click',function(e){e.preventDefault();alert('clicked');})
 });
