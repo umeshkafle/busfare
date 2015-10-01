@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fares</h1>
+
+<table class="table table-striped table-hover nav nav-tabs">
+  <thead>
+    <tr>
+      <th>Destination</th>
+      <th>From</th>
+      <th>Time</th>
+      <th>Price(Rs.)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fares.each do |fare| %>
+      <tr>
+        <td><%= fare.Destination %></td>
+        <td><%= fare.From %></td>
+        <td><%= fare.time %></td>
+        <td><%= fare.price %></td>
+        <td><%= link_to 'Delete', fare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><div class="btn btn-default"><%= link_to 'Book Ticket'%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fare', new_fare_path %>
