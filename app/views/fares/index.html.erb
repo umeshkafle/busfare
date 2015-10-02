@@ -1,17 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Fares</h1>
-<section id="tabs">
+<div id="tabs">
   <ul class="nav nav-tabs" id="menu" role="tablist">
     <li class="active" role="presentation" ><%= link_to "Today", "#fare", "aria-controls"=>"fare", "data-toggle"=>"tab"%></li>
+
     <li  role="presentation" ><%= link_to "Tomorrow", "#tomorrow", "aria-controls"=>"tomorrow", "data-toggle"=>"tab"%></li>
+
     <li><%= link_to "Persi", "#persi", "data-toggle"=>"tab"%></li>
+
     <li><%= link_to "NikoPersi", "#nikopersi", "data-toggle"=>"tab"%></li>
 
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane" id="fare">
+    <div role="tabpanel" class="tab-pane fade in active" id="fare">
       <table class="table table-striped table-hover">
         <thead>
           <tr>
@@ -47,11 +50,5 @@
       This will load the content belongs to nikopersi.
     </div>
   </div>
-</section>
-
-
-
-
-  <br>
 
   <%= link_to 'New Fare', new_fare_path %>

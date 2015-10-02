@@ -19,4 +19,5 @@
 $(document).ready(function()
 {
 	$(".btn").bind('click',function(e){e.preventDefault();alert('clicked');})
+  $('#fare').tab('show');
 });
