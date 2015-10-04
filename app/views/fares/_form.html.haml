@@ -1,0 +1,27 @@
+= form_for(@fare) do |f|
+  - if @fare.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@fare.errors.count, "error")
+        prohibited this fare from being saved:
+      %ul
+        - @fare.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :Destination
+    %br/
+    = f.text_field :Destination
+  .field
+    = f.label :From
+    %br/
+    = f.text_field :From
+  .field
+    = f.label :time
+    %br/
+    = f.datetime_select :time
+  .field
+    = f.label :price
+    %br/
+    = f.number_field :price
+  .actions
+    = f.submit

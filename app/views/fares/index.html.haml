@@ -1,0 +1,53 @@
+%p#notice= notice
+%h1 Listing Fares
+#tabs
+  %ul#menu.nav.nav-tabs{:role => "tablist"}
+    %li.active{:role => "presentation"}= link_to "Today", "#fare", "aria-controls"=>"fare", "data-toggle"=>"tab"
+    %li{:role => "presentation"}= link_to "Tomorrow", "#tomorrow", "aria-controls"=>"tomorrow", "data-toggle"=>"tab"
+    %li= link_to "Persi", "#persi", "data-toggle"=>"tab"
+    %li= link_to "NikoPersi", "#nikopersi", "data-toggle"=>"tab"
+  .tab-content
+    #fare.tab-pane.fade.in.active{:role => "tabpanel"}
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th Destination
+            %th From
+            %th Time
+            %th Price(Rs.)
+            %th{:colspan => "3"}
+        %tbody
+          - @fares.each do |fare|
+            %tr
+              %td= fare.Destination
+              %td= fare.From
+              %td= fare.time
+              %td= fare.price
+              %td= link_to 'Delete', fare, method: :delete, data: { confirm: 'Are you sure?' }
+              %td
+                .btn.btn-default= link_to 'Book Ticket'
+    #tomorrow.tab-pane{:role => "tabpanel"}
+      #tomorrow.tab-pane.fade.in.active{:role => "tabpanel"}
+        %table.table.table-striped.table-hover
+          %thead
+            %tr
+              %th Destination
+              %th From
+              %th Time
+              %th Price(Rs.)
+              %th{:colspan => "3"}
+          %tbody
+            - @fares.each do |fare|
+              %tr
+                %td= fare.Destination
+                %td= fare.From
+                %td= fare.time
+                %td= fare.price
+                %td= link_to 'Delete', fare, method: :delete, data: { confirm: 'Are you sure?' }
+                %td
+                  .btn.btn-default= link_to 'Book Ticket'
+    #persi.tab-pane{:role => "tabpanel"}
+      This page will load the content of persi.
+    #nikopersi.tab-pane{:role => "tabpanel"}
+      This will load the content belongs to nikopersi.
+  = link_to 'New Fare', new_fare_path

@@ -1,0 +1,19 @@
+%p#notice= notice
+%table.table{"table-striped" => ""}
+  %tr
+    %th
+      %strong Destination:
+    %th
+      %strong From:
+    %th
+      %strong Time:
+    %th
+      %strong Price:
+  %tr
+    %td= @fare.Destination
+    %td= @fare.From
+    %td= @fare.time
+    %td= @fare.price
+  = link_to 'Edit', edit_fare_path(@fare)
+  |
+  = link_to 'Back', fares_path
